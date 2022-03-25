@@ -14,3 +14,10 @@ items.forEach((item)=> {
         e.stopPropagation();
     })
 });
+
+const clearButton = document.querySelector('button');
+clearButton.addEventListener('click', ()=>{
+    items.forEach((item)=> {
+        item.classList.remove('paint');
+    })
+})
