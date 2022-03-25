@@ -20,4 +20,6 @@ clearButton.addEventListener('click', ()=>{
     items.forEach((item)=> {
         item.classList.remove('paint');
     })
+    let popUp = prompt('How many squares per side should the new grid be?', 16);
 })
+
