@@ -3,6 +3,10 @@ const gridSize = document.getElementById('grid-size');
 const resetButton = document.querySelector('button');
 
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 function createGrid () {
     for(i=0;i<=256;i++){
         let item = document.createElement('div');
@@ -31,10 +35,16 @@ function changeGrid (){
 
 
 const item = document.querySelector('div');
-item.addEventListener("mouseover", function(event) {
-    event.target.classList.replace("item", "paint");
-});
 
+item.addEventListener('mouseover', paint);
+item.addEventListener('mousedown', paint);
+
+function paint(e) {
+    if(e.type === 'mouseover' && !mouseDown){
+       return;
+    }
+    e.target.classList.replace("item", "paint");
+}
 gridSize.addEventListener("change", changeGrid);
   
 resetButton.addEventListener('click', ()=>{
