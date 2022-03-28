@@ -3,6 +3,7 @@ const gridSize = document.getElementById('grid-size');
 const resetButton = document.querySelector('button');
 
 
+
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
@@ -32,7 +33,6 @@ function changeGrid (){
     }
     console.log(gridSize.value);
 };
-
 
 const item = document.querySelector('div');
 
